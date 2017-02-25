@@ -10,6 +10,8 @@
 
 ## Install Raspbian
 
+The first step is to flash your MicroSD card with the latest version of [Raspbian Lite](https://www.raspberrypi.org/downloads/raspbian/).
+
 * [Mac instructions](https://www.raspberrypi.org/documentation/installation/installing-images/mac.md)
 * [Linux instructions](https://www.raspberrypi.org/documentation/installation/installing-images/linux.md)
 * [Windows instructions](https://www.raspberrypi.org/documentation/installation/installing-images/windows.md)
