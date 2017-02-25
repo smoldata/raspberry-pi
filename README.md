@@ -20,14 +20,14 @@ The first step is to flash your MicroSD card with the latest version of [Raspbia
 
 If you have a monitor and cable handy, it's the safest way to login to your pi. Insert the MicroSD card, plug in the HDMI cable and keyboard, and power it on. You should see a bunch of text scrolling by, and eventually it should show you a login prompt.
 
-Username: `pi`
+Username: `pi`  
 Password: `raspberry`
 
 ## Headless login
 
 *Note: this may not work any more, now that SSH isn't enabled by default*
 
-Once your Pi is up and running, plug it into a router with an ethernet cable & track down the IP address from the DHCP client list. If you have the nmap utility installed, you can also search for all the clients serving on port 22:
+Once your Pi is up and running, plug it into a router with an ethernet cable & track down the IP address from the DHCP client list. If you have the `nmap` utility installed, you can also search for all the clients serving on port 22:
 
 ```
 nmap -sV -p 22 192.168.0.1-254
@@ -102,4 +102,10 @@ Now let's reboot and then we should be ready to install some new things.
 sudo reboot
 ```
 
-Wait for the RPi to reboot, then log back in: `ssh pi@[ip address]`
+## SSH login
+
+If you want to login via SSH, you can follow the steps in the [headless login](#headless-login) section above to figure out the IP address, or type `ifconfig wlan0` from the terminal to figure out the current IP.
+
+Then you can login via SSH from Mac/Linux like this: `ssh pi@[ip address]` (and type the password you set earlier)
+
+If you use Windows, you may need to install a client like [PuTTY](http://www.putty.org/).
