@@ -44,3 +44,38 @@ gunzip --stdout /Volumes/smoldata/backup/2017-03-19-smoldata.img.gz | sudo dd bs
 ```
 
 Note that when restoring from an "expanded disk" .img file, it will take significantly longer than with the Raspbian system images you may have installed before.
+
+## If your USB thumb drive stops working
+
+If you suddenly begin getting errors about `Read-only file system` you may need to repair your USB thumb drive.
+
+For example, here is an `/etc/fstab` entry for a HFS+ formatted thumb drive (compatible with OS X):
+
+```
+/dev/sda2	/mnt/usb	hfsplus	defaults,uid=33,rw	  0	  0
+```
+
+But I noticed after the pi lost power unexpectedly that the `rw` part was getting ignored.
+
+```
+$ mount
+...
+/dev/sda2 on /mnt/usb type hfsplus (ro,relatime,umask=22,uid=33,gid=0,nls=utf8)
+```
+
+After doing a bit of research, I found a [blog post](https://jaysonlorenzen.wordpress.com/2010/09/13/linux-unable-to-write-to-non-journaled-hfsplus-drive/) describing the same problem. So I tried their suggestion:
+
+```
+sudo fsck.hfsplus /dev/sda2
+reboot
+```
+
+When the pi came back online, things were back to `rw`
+
+```
+$ mount
+...
+/dev/sda2 on /mnt/usb type hfsplus (rw,relatime,umask=22,uid=33,gid=0,nls=utf8)
+```
+
+And the errors I was seeing went away. Hooray! \o/
