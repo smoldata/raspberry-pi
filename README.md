@@ -25,7 +25,7 @@ Password: `raspberry`
 
 ## Headless login
 
-*Note: this may not work any more, now that SSH isn't enabled by default*
+*Note: this may not work any more, now that the SSH service isn't enabled by default*
 
 Once your Pi is up and running, plug it into a router with an ethernet cable & track down the IP address from the DHCP client list. If you have the `nmap` utility installed, you can also search for all the clients serving on port 22:
 
@@ -109,3 +109,7 @@ If you want to login via SSH, you can follow the steps in the [headless login](#
 Then you can login via SSH from Mac/Linux like this: `ssh pi@[ip address]` (and type the password you set earlier)
 
 If you use Windows, you may need to install a client like [PuTTY](http://www.putty.org/).
+
+## What next?
+
+See: [Caring for your Raspberry Pi](https://github.com/smoldata/raspberry-pi/blob/master/caring_for_your_rpi.md)
