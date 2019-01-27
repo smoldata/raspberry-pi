@@ -16,9 +16,11 @@ The first step is to flash your MicroSD card with the latest version of [Raspbia
 * [Linux instructions](https://www.raspberrypi.org/documentation/installation/installing-images/linux.md)
 * [Windows instructions](https://www.raspberrypi.org/documentation/installation/installing-images/windows.md)
 
+If you intend to setup the hardware "headless" (without a keyboard and monitor), you should create a blank file called `ssh` at the top level of the "boot" volume. This will instruct Raspbian to boot up with SSH enabled, but only once.
+
 ## Terminal login
 
-If you have a monitor and cable handy, it's the safest way to login to your pi. Insert the MicroSD card, plug in the HDMI cable and keyboard, and power it on. You should see a bunch of text scrolling by, and eventually it should show you a login prompt.
+If you have a monitor and HDMI cable handy, it's the safest way to login to your pi. Insert the MicroSD card, plug in the HDMI cable and keyboard, and power it on. You should see a bunch of text scrolling by, and eventually it should show you a login prompt.
 
 Username: `pi`  
 Password: `raspberry`
